@@ -13,6 +13,7 @@ import VideoIcon from "./videos.svg";
 import AudioIcon from "./audio.svg";
 import GridIcon from "./grid.svg";
 import FileIcon from "./file.svg";
+import FileTextMultipleIcon from "./file-text-multiple.svg";
 import DownloadIcon from "./download.svg";
 import ArrowRightIcon from "./arrow-right.svg";
 import GroupIcon from "./group.svg";
@@ -51,12 +52,14 @@ import HorizontaLDots from "./horizontal-dots.svg";
 import ChatIcon from "./chat.svg";
 import MoreDotIcon from "./more-dot.svg";
 import BellIcon from "./bell.svg";
+import SettingsIcon from "./settings.svg";
 
 export {
   DownloadIcon,
   BellIcon,
   MoreDotIcon,
   FileIcon,
+  FileTextMultipleIcon,
   GridIcon,
   AudioIcon,
   VideoIcon,
@@ -106,4 +109,5 @@ export {
   HorizontaLDots,
   ChevronUpIcon,
   ChatIcon,
+  SettingsIcon,
 };

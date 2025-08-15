@@ -5,19 +5,16 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 import {
-  BoxCubeIcon,
-  CalenderIcon,
   ChevronDownIcon,
+  FileTextMultipleIcon,
   GridIcon,
   HorizontaLDots,
-  ListIcon,
-  PageIcon,
-  PieChartIcon,
-  PlugInIcon,
-  TableIcon,
   UserCircleIcon,
+  GroupIcon,
+  DollarLineIcon,
+  PieChartIcon,
+  SettingsIcon,
 } from "../icons/index";
-import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
   name: string;
@@ -30,66 +27,64 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
+    path: "/",
   },
   {
-    icon: <CalenderIcon />,
-    name: "Calendar",
-    path: "/calendar",
-  },
-  {
-    icon: <UserCircleIcon />,
-    name: "User Profile",
-    path: "/profile",
-  },
-
-  {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
-  {
-    name: "Pages",
-    icon: <PageIcon />,
+    name: "Manajemen Konten",
+    icon: <FileTextMultipleIcon />,
     subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
+      { name: "Manajemen Soal & Pembahasan", path: "/under-development" },
+      { name: "Manajemen Bank Soal", path: "/under-development" },
+      { name: "Manajemen E-Learning", path: "/under-development" },
+      { name: "Manajemen Online Test / Tryout", path: "/under-development" },
+      { name: "Manajemen Kategori & Topik", path: "/under-development" },
+    ],
+  },
+  {
+    name: "Manajemen Pengguna",
+    icon: <GroupIcon />,
+    subItems: [
+      { name: "Kelola Pengguna", path: "/under-development" },
+      { name: "Manajemen Peran/Hak Akses", path: "/under-development" },
+    ],
+  },
+  {
+    name: "Transaksi & Keuangan",
+    icon: <DollarLineIcon />,
+    subItems: [
+      { name: "Daftar Transaksi", path: "/under-development" },
+      { name: "Manajemen Diskon/Promo", path: "/under-development" },
+    ],
+  },
+  {
+    name: "Laporan & Analisis",
+    icon: <PieChartIcon />,
+    subItems: [
+      { name: "Laporan Hasil Tryout", path: "/under-development" },
+      { name: "Laporan Pengerjaan Bank Soal", path: "/under-development" },
+      { name: "Laporan Penggunaan E-Learning", path: "/under-development" },
+      { name: "Laporan Pengguna", path: "/under-development" },
+      { name: "Laporan AI", path: "/under-development" },
     ],
   },
 ];
 
 const othersItems: NavItem[] = [
   {
-    icon: <PieChartIcon />,
-    name: "Charts",
-    subItems: [
-      { name: "Line Chart", path: "/line-chart", pro: false },
-      { name: "Bar Chart", path: "/bar-chart", pro: false },
-    ],
+    icon: <UserCircleIcon />,
+    name: "User Profile",
+    path: "/profile",
   },
   {
-    icon: <BoxCubeIcon />,
-    name: "UI Elements",
+    name: "Pengaturan Sistem",
+    icon: <SettingsIcon />,
     subItems: [
-      { name: "Alerts", path: "/alerts", pro: false },
-      { name: "Avatar", path: "/avatars", pro: false },
-      { name: "Badge", path: "/badge", pro: false },
-      { name: "Buttons", path: "/buttons", pro: false },
-      { name: "Images", path: "/images", pro: false },
-      { name: "Videos", path: "/videos", pro: false },
-    ],
-  },
-  {
-    icon: <PlugInIcon />,
-    name: "Authentication",
-    subItems: [
-      { name: "Sign In", path: "/signin", pro: false },
-      { name: "Sign Up", path: "/signup", pro: false },
+      { name: "Pengaturan Umum Aplikasi", path: "/under-development" },
+      { name: "Manajemen Notifikasi", path: "/under-development" },
+      { name: "Pengaturan Gamifikasi", path: "/under-development" },
+      { name: "Pengaturan Chatbot", path: "/under-development" },
+      { name: "Manajemen Administrator", path: "/under-development" },
+      { name: "Log Sistem", path: "/under-development" },
     ],
   },
 ];
@@ -374,7 +369,6 @@ const AppSidebar: React.FC = () => {
             </div>
           </div>
         </nav>
-        {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null}
       </div>
     </aside>
   );
